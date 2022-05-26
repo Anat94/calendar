@@ -1,3 +1,4 @@
 .env
 google.js
 node_modules/
+public/event.json
