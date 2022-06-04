@@ -1,22 +1,31 @@
 {
-  "name": "calendar",
+  "name": "json-offline-data-event-calendar-flutter",
   "version": "1.0.0",
-  "description": "",
+  "description": "**[View document in Syncfusion Flutter Knowledge base](https://www.syncfusion.com/kb/11466/how-to-load-the-json-data-offline-for-the-flutter-event-calendar-sfcalendar-appointments)**",
   "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SyncfusionExamples/json-offline-data-event-calendar-flutter.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SyncfusionExamples/json-offline-data-event-calendar-flutter/issues"
+  },
+  "homepage": "https://github.com/SyncfusionExamples/json-offline-data-event-calendar-flutter#readme",
   "dependencies": {
     "dotenv": "^16.0.1",
-    "ejs": "^3.1.8",
     "express": "^4.18.1",
-    "expressjs": "^1.0.1",
     "fs": "^0.0.1-security",
     "googleapis": "^100.0.0",
-    "nodemon": "^2.0.16",
+    "process": "^0.11.10",
     "request": "^2.88.2"
   }
 }
