@@ -1,12 +1,19 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:math';
 import 'package:flutter/material.dart';
 
 import 'package:http/http.dart' as http;
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
-void main() => runApp(new JsonData());
+void main() {
+  GestureDetector(
+    onTap: () {
+      print('Widget Tapped');
+    },
+    child: Container(),
+  );
+  runApp(new JsonData());
+}
 
 class JsonData extends StatelessWidget {
   @override
@@ -24,18 +31,18 @@ class OnlineJsonData extends StatefulWidget {
 }
 
 class CalendarExample extends State<OnlineJsonData> {
-  List<Color> _colorCollection = <Color>[];
-  String? _networkStatusMsg;
-
   @override
   void initState() {
-    _initializeEventColor();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+      // ! swipe to reload
+      appBar: new AppBar(
+        title: Text('Calendrier'),
+      ),
       body: Container(
         child: FutureBuilder(
           future: getDataFromWeb(),
@@ -45,6 +52,11 @@ class CalendarExample extends State<OnlineJsonData> {
                 child: Container(
                     child: SfCalendar(
                   view: CalendarView.month,
+                  allowedViews: [
+                    CalendarView.day,
+                    CalendarView.week,
+                    CalendarView.month,
+                  ],
                   monthViewSettings: MonthViewSettings(showAgenda: true),
                   firstDayOfWeek: 1,
                   showNavigationArrow: true,
@@ -58,9 +70,12 @@ class CalendarExample extends State<OnlineJsonData> {
                 )),
               );
             } else {
-              return Container(
+              // ! Faire en sorte de reessayer quand sa marche pas
+              return SizedBox(
+                height: (MediaQuery.of(context).size.width) / 2,
+                width: (MediaQuery.of(context).size.height) / 2,
                 child: Center(
-                  child: Text('$_networkStatusMsg'),
+                  child: CircularProgressIndicator(),
                 ),
               );
             }
@@ -99,19 +114,6 @@ class CalendarExample extends State<OnlineJsonData> {
   DateTime _convertDateFromString(String date) {
     return DateTime.parse(date);
   }
-
-  void _initializeEventColor() {
-    _colorCollection.add(const Color(0xFF0F8644));
-    _colorCollection.add(const Color(0xFF8B1FA9));
-    _colorCollection.add(const Color(0xFFD20100));
-    _colorCollection.add(const Color(0xFFFC571D));
-    _colorCollection.add(const Color(0xFF36B37B));
-    _colorCollection.add(const Color(0xFF01A1EF));
-    _colorCollection.add(const Color(0xFF3D4FB5));
-    _colorCollection.add(const Color(0xFFE47C73));
-    _colorCollection.add(const Color(0xFF636363));
-    _colorCollection.add(const Color(0xFF0A8043));
-  }
 }
 
 class MeetingDataSource extends CalendarDataSource {
@@ -146,12 +148,7 @@ class MeetingDataSource extends CalendarDataSource {
 }
 
 class Meeting {
-  Meeting(
-      {this.eventName,
-      this.from,
-      this.to,
-      this.background,
-      this.allDay = false});
+  Meeting({this.eventName, this.from, this.to, this.background, this.allDay});
 
   String? eventName;
   DateTime? from;
