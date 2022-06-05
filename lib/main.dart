@@ -1,17 +1,10 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
-
 import 'package:http/http.dart' as http;
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
 void main() {
-  GestureDetector(
-    onTap: () {
-      print('Widget Tapped');
-    },
-    child: Container(),
-  );
   runApp(new JsonData());
 }
 
