@@ -1,62 +1,52 @@
+import 'dart:async';
 import 'dart:convert';
+import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+
+import 'package:http/http.dart' as http;
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
-void main() => runApp(CalendarJson());
+void main() => runApp(new JsonData());
 
-class CalendarJson extends StatelessWidget {
+class JsonData extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return MaterialApp(
-      title: 'Hello',
-      home: MyAppPage(),
+      debugShowCheckedModeBanner: false,
+      home: OnlineJsonData(),
     );
   }
 }
 
-class MyAppPage extends StatefulWidget {
+class OnlineJsonData extends StatefulWidget {
   @override
-  MyAppPageState createState() => MyAppPageState();
+  State<StatefulWidget> createState() => CalendarExample();
 }
 
-class MyAppPageState extends State<MyAppPage> {
+class CalendarExample extends State<OnlineJsonData> {
+  List<Color> _colorCollection = <Color>[];
+  String? _networkStatusMsg;
+
+  @override
+  void initState() {
+    _initializeEventColor();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return Scaffold(
-      appBar: new AppBar(
-        title: Text('Calendrier'),
-      ),
-      body: Center(
+    return new Scaffold(
+      body: Container(
         child: FutureBuilder(
-          builder: (context, snapshot) {
-            var showData = json.decode(snapshot.data.toString());
-            List<Meeting> collection = <Meeting>[];
-            if (showData != null) {
-              for (int i = 0; i < showData.length; i++) {
-                collection.add(Meeting(
-                    eventName: showData[i]['name'],
-                    isAllDay: false,
-                    from: DateFormat('yyyy-MM-dd HH:mm:ss').parse(showData[i]['start']),
-                    to: DateFormat('yyyy-MM-dd HH:mm:ss').parse(showData[i]['end']),
-                    background: (showData[i]['color'] == "red")
-                        ? Colors.red
-                        : (showData[i]['color'] == "green")
-                        ? Colors.green
-                        : (showData[i]['color'] == "blue")
-                        ? Colors.blue
-                        : Colors.black));
-              }
-            }
-            return Container(
-                child: SfCalendar(
+          future: getDataFromWeb(),
+          builder: (BuildContext context, AsyncSnapshot snapshot) {
+            if (snapshot.data != null) {
+              return SafeArea(
+                child: Container(
+                    child: SfCalendar(
                   view: CalendarView.month,
-                  dataSource: _getCalendarDataSource(collection),
                   monthViewSettings: MonthViewSettings(showAgenda: true),
                   firstDayOfWeek: 1,
-                  todayHighlightColor: Colors.red,
                   showNavigationArrow: true,
                   selectionDecoration: BoxDecoration(
                     color: Colors.transparent,
@@ -64,18 +54,63 @@ class MyAppPageState extends State<MyAppPage> {
                     borderRadius: const BorderRadius.all(Radius.circular(4)),
                     shape: BoxShape.rectangle,
                   ),
-                ));
+                  dataSource: MeetingDataSource(snapshot.data),
+                )),
+              );
+            } else {
+              return Container(
+                child: Center(
+                  child: Text('$_networkStatusMsg'),
+                ),
+              );
+            }
           },
-          future:
-          DefaultAssetBundle.of(context).loadString("assets/appointment.json"),
         ),
       ),
     );
   }
 
-  MeetingDataSource _getCalendarDataSource([List<Meeting>? collection]) {
-    List<Meeting> meetings = collection ?? <Meeting>[];
-    return MeetingDataSource(meetings);
+  Future<List<Meeting>> getDataFromWeb() async {
+    var data = await http.get(Uri.parse("http://10.0.2.2:5000"));
+    print(data);
+    var jsonData = json.decode(data.body);
+
+    final List<Meeting> appointmentData = [];
+    for (var data in jsonData) {
+      Meeting meetingData = Meeting(
+          eventName: data['Subject'],
+          from: _convertDateFromString(
+            data['StartTime'],
+          ),
+          to: _convertDateFromString(data['EndTime']),
+          background: (data['className'] == "chill")
+              ? Colors.green
+              : (data['className'] == "info")
+                  ? Colors.blue
+                  : (data['className'] == "pompier")
+                      ? Colors.red
+                      : Colors.black,
+          allDay: data['AllDay']);
+      appointmentData.add(meetingData);
+    }
+    return appointmentData;
+  }
+
+  DateTime _convertDateFromString(String date) {
+    return DateTime.parse(date);
+  }
+
+  void _initializeEventColor() {
+    _colorCollection.add(const Color(0xFF0F8644));
+    _colorCollection.add(const Color(0xFF8B1FA9));
+    _colorCollection.add(const Color(0xFFD20100));
+    _colorCollection.add(const Color(0xFFFC571D));
+    _colorCollection.add(const Color(0xFF36B37B));
+    _colorCollection.add(const Color(0xFF01A1EF));
+    _colorCollection.add(const Color(0xFF3D4FB5));
+    _colorCollection.add(const Color(0xFFE47C73));
+    _colorCollection.add(const Color(0xFF636363));
+    _colorCollection.add(const Color(0xFF0A8043));
   }
 }
 
@@ -95,11 +130,6 @@ class MeetingDataSource extends CalendarDataSource {
   }
 
   @override
-  bool isAllDay(int index) {
-    return appointments![index].isAllDay;
-  }
-
-  @override
   String getSubject(int index) {
     return appointments![index].eventName;
   }
@@ -108,14 +138,24 @@ class MeetingDataSource extends CalendarDataSource {
   Color getColor(int index) {
     return appointments![index].background;
   }
+
+  @override
+  bool isAllDay(int index) {
+    return appointments![index].allDay;
+  }
 }
 
 class Meeting {
-  Meeting({this.eventName, this.from, this.to, this.background, this.isAllDay});
+  Meeting(
+      {this.eventName,
+      this.from,
+      this.to,
+      this.background,
+      this.allDay = false});
 
   String? eventName;
   DateTime? from;
   DateTime? to;
   Color? background;
-  bool? isAllDay;
+  bool? allDay;
 }

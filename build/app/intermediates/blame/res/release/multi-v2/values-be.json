@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/anatole/delivery/json-offline-data-event-calendar-flutter/build/app/intermediates/incremental/mergeReleaseResources/merged.dir/values-be/values-be.xml",
+            "outputFile": "/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/incremental/mergeReleaseResources/merged.dir/values-be/values-be.xml",
             "map": [
                 {
                     "source": "/home/anatole/.gradle/caches/transforms-2/files-2.1/f90299ff420036e311b84c728802cd71/core-1.6.0/res/values-be/values-be.xml",

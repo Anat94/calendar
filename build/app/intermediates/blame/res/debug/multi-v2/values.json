@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/anatole/delivery/json-offline-data-event-calendar-flutter/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
-                    "source": "/home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/res/values/styles.xml",
+                    "source": "/home/anatole/delivery/NodeJs/Calendar/android/app/src/main/res/values/styles.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -270,6 +270,7 @@ Referenced Strings:
   alwaysUse24HourFormat
   android
   android.intent.action.RUN
+  android.net.conn.CONNECTIVITY_CHANGE
   android.type.verbatim
   android.util.LongArray
   android.view.View
@@ -300,8 +301,10 @@ Referenced Strings:
   birthdayMonth
   birthdayYear
   cached_engine_id
+  cancel
   cell
   character
+  check
   clearFocus
   cleartextTrafficPermitted
   click
@@ -310,6 +313,7 @@ Referenced Strings:
   componentName
   composingBase
   composingExtent
+  connectivity
   contextMenu
   copy
   countryName
@@ -410,6 +414,7 @@ Referenced Strings:
   libapp.so
   libflutter.so
   light
+  listen
   loadingUnitId
   locale
   longPress
@@ -424,6 +429,7 @@ Referenced Strings:
   method
   middleInitial
   middleName
+  mobile
   move
   name
   namePrefix
@@ -470,6 +476,8 @@ Referenced Strings:
   platformBrightness
   platformViewId
   plugins
+  plugins.flutter.io/connectivity
+  plugins.flutter.io/connectivity_status
   popRoute
   postalAddress
   postalAddressExtended
@@ -549,6 +557,7 @@ Referenced Strings:
   viewType
   wait
   width
+  wifi
   window
   write
   x

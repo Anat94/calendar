@@ -1,9 +1,10 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml:1:1-30:12
-INJECTED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml:1:1-30:12
-INJECTED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml:1:1-30:12
-INJECTED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml:1:1-30:12
+ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:1:1-31:12
+INJECTED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:1:1-31:12
+INJECTED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:1:1-31:12
+INJECTED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:1:1-31:12
+MERGED from [:connectivity] /home/anatole/delivery/NodeJs/Calendar/build/connectivity/intermediates/library_manifest/release/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.fragment:fragment:1.1.0] /home/anatole/.gradle/caches/transforms-2/files-2.1/0986d0d74b8a2c7da8161f6370fc7744/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] /home/anatole/.gradle/caches/transforms-2/files-2.1/28d99d5113324aa067757f8ca41a426f/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] /home/anatole/.gradle/caches/transforms-2/files-2.1/e1bbce6b0d79e8479b70e7bd729bb743/loader-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -19,25 +20,25 @@ MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/anatole/.gradle/caches
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/anatole/.gradle/caches/transforms-2/files-2.1/94c726e196feb64bbc6cc40dd33b803e/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/anatole/.gradle/caches/transforms-2/files-2.1/b80fad55c42c418cc210e235056767fb/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/anatole/.gradle/caches/transforms-2/files-2.1/19357b983c2a9dddd8a2302a7ff7ca43/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
-INJECTED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml:1:1-30:12
-INJECTED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml:1:1-30:12
-INJECTED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml:1:1-30:12
+INJECTED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:1:1-31:12
+INJECTED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:1:1-31:12
+INJECTED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:1:1-31:12
 	package
-		ADDED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml:2:5-50
-		INJECTED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml
-		INJECTED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:2:5-50
+		INJECTED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml:1:1-30:12
-		INJECTED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:1:1-31:12
+		INJECTED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml
 	android:versionCode
-		INJECTED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml:1:1-30:12
-		INJECTED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:1:1-31:12
+		INJECTED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml:1:11-69
+		ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:1:11-69
 application
-ADDED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml:8:5-29:19
+ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:8:5-29:19
 MERGED from [androidx.core:core:1.6.0] /home/anatole/.gradle/caches/transforms-2/files-2.1/f90299ff420036e311b84c728802cd71/core-1.6.0/AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.6.0] /home/anatole/.gradle/caches/transforms-2/files-2.1/f90299ff420036e311b84c728802cd71/core-1.6.0/AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/anatole/.gradle/caches/transforms-2/files-2.1/94c726e196feb64bbc6cc40dd33b803e/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
@@ -45,45 +46,51 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/anato
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.6.0] /home/anatole/.gradle/caches/transforms-2/files-2.1/f90299ff420036e311b84c728802cd71/core-1.6.0/AndroidManifest.xml:24:18-86
 	android:label
-		ADDED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml:10:9-48
+		ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:10:9-48
 	android:icon
-		ADDED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml:11:9-43
+		ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:11:9-43
 	android:name
-		ADDED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml:9:9-57
+		ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:9:9-57
 activity#com.example.flutter_jsonapplication.MainActivity
-ADDED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml:12:9-23:20
+ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:12:9-23:20
 	android:launchMode
-		ADDED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml:14:13-43
+		ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:14:13-43
 	android:hardwareAccelerated
-		ADDED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml:17:13-47
+		ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:17:13-47
 	android:windowSoftInputMode
-		ADDED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml:18:13-55
+		ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:18:13-55
 	android:configChanges
-		ADDED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml:16:13-163
+		ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:16:13-163
 	android:theme
-		ADDED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml:15:13-47
+		ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:15:13-47
 	android:name
-		ADDED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml:13:13-41
+		ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:13:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml:19:13-22:29
+ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:19:13-22:29
 action#android.intent.action.MAIN
-ADDED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml:20:17-68
+ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:20:17-68
 	android:name
-		ADDED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml:20:25-66
+		ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:20:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml:21:17-76
+ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:21:17-76
 	android:name
-		ADDED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml:21:27-74
+		ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:21:27-74
 meta-data#flutterEmbedding
-ADDED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml:26:9-28:33
+ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:26:9-28:33
 	android:value
-		ADDED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml:28:13-30
+		ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:28:13-30
 	android:name
-		ADDED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml:27:13-44
+		ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:27:13-44
+uses-permission#android.permission.INTERNET
+ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:30:5-67
+	android:name
+		ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:30:22-64
 uses-sdk
-INJECTED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml
-INJECTED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml
+INJECTED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml
+INJECTED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml
+MERGED from [:connectivity] /home/anatole/delivery/NodeJs/Calendar/build/connectivity/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:connectivity] /home/anatole/delivery/NodeJs/Calendar/build/connectivity/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.fragment:fragment:1.1.0] /home/anatole/.gradle/caches/transforms-2/files-2.1/0986d0d74b8a2c7da8161f6370fc7744/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.1.0] /home/anatole/.gradle/caches/transforms-2/files-2.1/0986d0d74b8a2c7da8161f6370fc7744/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager:viewpager:1.0.0] /home/anatole/.gradle/caches/transforms-2/files-2.1/28d99d5113324aa067757f8ca41a426f/viewpager-1.0.0/AndroidManifest.xml:20:5-44
@@ -114,13 +121,17 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/anatole/.gradle
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/anatole/.gradle/caches/transforms-2/files-2.1/b80fad55c42c418cc210e235056767fb/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/anatole/.gradle/caches/transforms-2/files-2.1/19357b983c2a9dddd8a2302a7ff7ca43/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/anatole/.gradle/caches/transforms-2/files-2.1/19357b983c2a9dddd8a2302a7ff7ca43/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
-INJECTED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml
-INJECTED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml
+INJECTED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml
+INJECTED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml
-		INJECTED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml
-		INJECTED from /home/anatole/delivery/json-offline-data-event-calendar-flutter/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [:connectivity] /home/anatole/delivery/NodeJs/Calendar/build/connectivity/intermediates/library_manifest/release/AndroidManifest.xml:7:5-79
+	android:name
+		ADDED from [:connectivity] /home/anatole/delivery/NodeJs/Calendar/build/connectivity/intermediates/library_manifest/release/AndroidManifest.xml:7:22-76

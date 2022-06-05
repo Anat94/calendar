@@ -43,7 +43,7 @@ app.get('/', async function(req, res) {
             if (err) { return console.log(err);}
             let i = 0;
             while (i < body.body.length) {
-                let jsonData = `{"title": "${body.body[i].acti_title}", "start": "${body.body[i].start}", "end": "${body.body[i].end}", "className": "info"}`;
+                let jsonData = `{"Subject": "${body.body[i].acti_title}", "StartTime": "${body.body[i].start}", "EndTime": "${body.body[i].end}", "className": "info", "AllDay": false}`;
                 let jsonObj = JSON.parse(jsonData);
                 my_epitab[i] = jsonObj;
                 i++;
@@ -88,7 +88,7 @@ app.get('/', async function(req, res) {
                             if (tabend[2] - tabstart[2] == 1)
                                 tabend[2] = tabstart[2];
                             end = tabend.join('-')
-                            jsonData = `{"title": "${items[i].summary}", "start": "${items[i].start.date}", "end": "${end}", "className": "chill"}`;
+                            jsonData = `{"Subject": "${items[i].summary}", "StartTime": "${items[i].start.date}", "EndTime": "${end}", "className": "chill", "AllDay": false}`;
                         } else {
                             let start = items[i].start.dateTime;
                             let end = items[i].end.dateTime;
@@ -97,7 +97,7 @@ app.get('/', async function(req, res) {
                             if (tabend[2] - tabstart[2] == 1)
                                 tabend[2] = tabstart[2];
                             end = tabend.join('-')
-                            jsonData = `{"title": "${items[i].summary}", "start": "${items[i].start.dateTime}", "end": "${end}", "className": "chill"}`;
+                            jsonData = `{"Subject": "${items[i].summary}", "StartTime": "${items[i].start.dateTime}", "EndTime": "${end}", "className": "chill", "AllDay": false}`;
                         }
                         let jsonObj = JSON.parse(jsonData);
                         my_googletab[i] = jsonObj;
@@ -113,6 +113,7 @@ app.get('/', async function(req, res) {
         });
     });
     let json = my_epitab.concat(my_googletab);
+    console.log(json);
     res.json(json);
 });
 

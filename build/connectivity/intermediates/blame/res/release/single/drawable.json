@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/home/anatole/delivery/NodeJs/Calendar/build/connectivity/intermediates/res/merged/release/drawable/notification_bg.xml",
+        "source": "/home/anatole/.gradle/caches/transforms-2/files-2.1/f90299ff420036e311b84c728802cd71/core-1.6.0/res/drawable/notification_bg.xml"
+    },
+    {
+        "merged": "/home/anatole/delivery/NodeJs/Calendar/build/connectivity/intermediates/res/merged/release/drawable/notification_bg_low.xml",
+        "source": "/home/anatole/.gradle/caches/transforms-2/files-2.1/f90299ff420036e311b84c728802cd71/core-1.6.0/res/drawable/notification_bg_low.xml"
+    },
+    {
+        "merged": "/home/anatole/delivery/NodeJs/Calendar/build/connectivity/intermediates/res/merged/release/drawable/notification_tile_bg.xml",
+        "source": "/home/anatole/.gradle/caches/transforms-2/files-2.1/f90299ff420036e311b84c728802cd71/core-1.6.0/res/drawable/notification_tile_bg.xml"
+    },
+    {
+        "merged": "/home/anatole/delivery/NodeJs/Calendar/build/connectivity/intermediates/res/merged/release/drawable/notification_icon_background.xml",
+        "source": "/home/anatole/.gradle/caches/transforms-2/files-2.1/f90299ff420036e311b84c728802cd71/core-1.6.0/res/drawable/notification_icon_background.xml"
+    }
+]
