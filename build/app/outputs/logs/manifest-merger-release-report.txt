@@ -4,7 +4,6 @@ ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidMa
 INJECTED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:1:1-31:12
 INJECTED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:1:1-31:12
 INJECTED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:1:1-31:12
-MERGED from [:connectivity] /home/anatole/delivery/NodeJs/Calendar/build/connectivity/intermediates/library_manifest/release/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.fragment:fragment:1.1.0] /home/anatole/.gradle/caches/transforms-2/files-2.1/0986d0d74b8a2c7da8161f6370fc7744/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] /home/anatole/.gradle/caches/transforms-2/files-2.1/28d99d5113324aa067757f8ca41a426f/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] /home/anatole/.gradle/caches/transforms-2/files-2.1/e1bbce6b0d79e8479b70e7bd729bb743/loader-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -89,8 +88,6 @@ uses-sdk
 INJECTED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml
 INJECTED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml
-MERGED from [:connectivity] /home/anatole/delivery/NodeJs/Calendar/build/connectivity/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [:connectivity] /home/anatole/delivery/NodeJs/Calendar/build/connectivity/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.fragment:fragment:1.1.0] /home/anatole/.gradle/caches/transforms-2/files-2.1/0986d0d74b8a2c7da8161f6370fc7744/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.1.0] /home/anatole/.gradle/caches/transforms-2/files-2.1/0986d0d74b8a2c7da8161f6370fc7744/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager:viewpager:1.0.0] /home/anatole/.gradle/caches/transforms-2/files-2.1/28d99d5113324aa067757f8ca41a426f/viewpager-1.0.0/AndroidManifest.xml:20:5-44
@@ -131,7 +128,3 @@ INJECTED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/Androi
 		INJECTED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml
 		ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml
 		INJECTED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml
-uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [:connectivity] /home/anatole/delivery/NodeJs/Calendar/build/connectivity/intermediates/library_manifest/release/AndroidManifest.xml:7:5-79
-	android:name
-		ADDED from [:connectivity] /home/anatole/delivery/NodeJs/Calendar/build/connectivity/intermediates/library_manifest/release/AndroidManifest.xml:7:22-76

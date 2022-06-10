@@ -11,51 +11,12 @@ void main() {
 class JsonData extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, routes: {
-      '/': (context) => OnlineJsonData(),
-    });
-  }
-}
-
-class DayViewExample extends State<OnlineJsonData> {
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold();
-  }
-
-  Future<List<Meeting>> getDataFromWeb() async {
-    var data = await http.get(Uri.parse("http://10.0.2.2:5000"));
-    print(data);
-    var jsonData = json.decode(data.body);
-
-    final List<Meeting> appointmentData = [];
-    for (var data in jsonData) {
-      Meeting meetingData = Meeting(
-          eventName: data['Subject'],
-          from: _convertDateFromString(
-            data['StartTime'],
-          ),
-          to: _convertDateFromString(data['EndTime']),
-          background: (data['className'] == "chill")
-              ? Colors.green
-              : (data['className'] == "info")
-                  ? Colors.blue
-                  : (data['className'] == "pompier")
-                      ? Colors.red
-                      : Colors.black,
-          allDay: data['AllDay']);
-      appointmentData.add(meetingData);
-    }
-    return appointmentData;
-  }
-
-  DateTime _convertDateFromString(String date) {
-    return DateTime.parse(date);
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      routes: {
+        '/': (context) => OnlineJsonData(),
+      },
+    );
   }
 }
 
@@ -66,7 +27,7 @@ class OnlineJsonData extends StatefulWidget {
 
 Future<List<Meeting>> getDataFromWeb() async {
   var data = null;
-  data = await http.get(Uri.parse("http://10.0.2.2:5000"));
+  data = await http.get(Uri.parse("https://calendar-node-js.herokuapp.com/"));
   print("Http req => ok");
   var jsonData = json.decode(data.body);
 
@@ -93,7 +54,34 @@ Future<List<Meeting>> getDataFromWeb() async {
 
 Future<List<Meeting>> getDataFromWeb2() async {
   var data = null;
-  data = await http.get(Uri.parse("http://10.0.2.2:5000"));
+  data = await http.get(Uri.parse("https://calendar-node-js.herokuapp.com/"));
+  print("Http req => ok");
+  var jsonData = json.decode(data.body);
+
+  final List<Meeting> appointmentData = [];
+  for (var data in jsonData) {
+    Meeting meetingData = Meeting(
+        eventName: data['Subject'],
+        from: _convertDateFromString(
+          data['StartTime'],
+        ),
+        to: _convertDateFromString(data['EndTime']),
+        background: (data['className'] == "chill")
+            ? Colors.green
+            : (data['className'] == "info")
+                ? Colors.blue
+                : (data['className'] == "pompier")
+                    ? Colors.red
+                    : Colors.black,
+        allDay: data['AllDay']);
+    appointmentData.add(meetingData);
+  }
+  return appointmentData;
+}
+
+Future<List<Meeting>> getDataFromWeb3() async {
+  var data = null;
+  data = await http.get(Uri.parse("https://calendar-node-js.herokuapp.com/"));
   print("Http req => ok");
   var jsonData = json.decode(data.body);
 
@@ -124,6 +112,7 @@ DateTime _convertDateFromString(String date) {
 
 CalendarController _calendarController1 = CalendarController();
 CalendarController _calendarController2 = CalendarController();
+CalendarController _calendarController3 = CalendarController();
 
 class CalendarExample extends State<OnlineJsonData> {
   int _selectedIndex = 0;
@@ -132,6 +121,7 @@ class CalendarExample extends State<OnlineJsonData> {
       child: FutureBuilder(
         future: getDataFromWeb(),
         builder: (BuildContext context, AsyncSnapshot snapshot) {
+          // retry:
           if (snapshot.data != null) {
             return SafeArea(
               child: Container(
@@ -152,7 +142,9 @@ class CalendarExample extends State<OnlineJsonData> {
               ),
             );
           } else {
+            getDataFromWeb();
             // ! Faire en sorte de reessayer quand sa marche pas
+            // if (snapshot.data != null) break retry;
             return SizedBox(
               height: (MediaQuery.of(context).size.width) / 2,
               width: (MediaQuery.of(context).size.height) / 2,
@@ -172,9 +164,7 @@ class CalendarExample extends State<OnlineJsonData> {
             return SafeArea(
               child: Container(
                 child: SfCalendar(
-                  view: CalendarView.day,
-                  // controller: _calendarController2,
-                  // monthViewSettings: MonthViewSettings(showAgenda: true),
+                  view: CalendarView.week,
                   firstDayOfWeek: 1,
                   showNavigationArrow: true,
                   selectionDecoration: BoxDecoration(
@@ -200,9 +190,7 @@ class CalendarExample extends State<OnlineJsonData> {
         },
       ),
     ),
-    Container(
-      child: Card(child: Text('Hello World!')),
-    )
+    Center()
   ];
 
   void _onItemTapped(int index) {
@@ -222,6 +210,150 @@ class CalendarExample extends State<OnlineJsonData> {
       // ! swipe to reload
       appBar: new AppBar(
         title: Text('Calendrier'),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.account_circle_sharp),
+            tooltip: 'Voir mes infos',
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute<void>(builder: (BuildContext context) {
+                return Scaffold(
+                    appBar: AppBar(
+                      title: const Text('Informations :'),
+                    ),
+                    body: SafeArea(
+                      child: Column(
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: NetworkImage("xxIMAGExx"),
+                                    fit: BoxFit.cover)),
+                            child: Container(
+                              width: double.infinity,
+                              height: 200,
+                              child: Container(
+                                alignment: Alignment(0.0, 2.5),
+                                child: CircleAvatar(
+                                  backgroundImage: NetworkImage("xxIMAGExx"),
+                                  radius: 60.0,
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 60,
+                          ),
+                          Text(
+                            "xxNAMExx",
+                            style: TextStyle(
+                                fontSize: 25.0,
+                                color: Colors.blueGrey,
+                                letterSpacing: 2.0,
+                                fontWeight: FontWeight.w400),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            "xxEMAILxx",
+                            style: TextStyle(
+                                fontSize: 15.0,
+                                color: Colors.black45,
+                                letterSpacing: 2.0,
+                                fontWeight: FontWeight.w300),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Card(
+                              margin: EdgeInsets.symmetric(
+                                  horizontal: 20.0, vertical: 8.0),
+                              elevation: 2.0,
+                              child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                      vertical: 12, horizontal: 30),
+                                  child: Text(
+                                    "VILLE - (2021 - 2026)",
+                                    style: TextStyle(
+                                        letterSpacing: 2.0,
+                                        fontWeight: FontWeight.w300),
+                                  ))),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          Card(
+                            margin: EdgeInsets.symmetric(
+                                horizontal: 20.0, vertical: 8.0),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Expanded(
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                          "GPA :",
+                                          style: TextStyle(
+                                              color: Colors.blueAccent,
+                                              fontSize: 22.0,
+                                              fontWeight: FontWeight.w600),
+                                        ),
+                                        SizedBox(
+                                          height: 7,
+                                        ),
+                                        Text(
+                                          "xxGPAxx",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 22.0,
+                                              fontWeight: FontWeight.w300),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                          "Crédits",
+                                          style: TextStyle(
+                                              color: Colors.blueAccent,
+                                              fontSize: 22.0,
+                                              fontWeight: FontWeight.w600),
+                                        ),
+                                        SizedBox(
+                                          height: 7,
+                                        ),
+                                        Text(
+                                          "xxCréditsxx",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 22.0,
+                                              fontWeight: FontWeight.w300),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 50,
+                          ),
+                        ],
+                      ),
+                    ));
+              }));
+            },
+          ),
+        ],
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),

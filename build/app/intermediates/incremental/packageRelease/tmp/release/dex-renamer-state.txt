@@ -1,4 +1,4 @@
-#Sun Jun 05 16:10:40 CEST 2022
+#Tue Jun 07 16:17:30 CEST 2022
 base.0=/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/transforms/r8/release/0/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

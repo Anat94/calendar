@@ -81,25 +81,31 @@ app.get('/', async function(req, res) {
                     let jsonData;
                     for (let i = 0; i < items.length; i++) {
                         if (items[i].start.dateTime == undefined) {
+                            console.log("JE SUIS ICI");
                             let start = items[i].start.date;
                             let end = items[i].end.date;
-                            tabstart = start.split('-');
-                            tabend = end.split('-');
-                            if (tabend[2] - tabstart[2] == 1)
-                                tabend[2] = tabstart[2];
-                            end = tabend.join('-')
-                            jsonData = `{"Subject": "${items[i].summary}", "StartTime": "${items[i].start.date}", "EndTime": "${end}", "className": "chill", "AllDay": false}`;
+                            console.log(start, end);
+                            jsonData = `{"Subject": "${items[i].summary}", "StartTime": "${start}", "EndTime": "${end}", "className": "chill", "AllDay": true}`;
                         } else {
                             let start = items[i].start.dateTime;
                             let end = items[i].end.dateTime;
+                            let end2 = end.split('T')[1].split('+')[0];
+                            let start2 = start.split('T')[1].split('+')[0];
                             tabstart = start.split('T')[0].split('-');
                             tabend = end.split('T')[0].split('-');
                             if (tabend[2] - tabstart[2] == 1)
                                 tabend[2] = tabstart[2];
-                            end = tabend.join('-')
-                            jsonData = `{"Subject": "${items[i].summary}", "StartTime": "${items[i].start.dateTime}", "EndTime": "${end}", "className": "chill", "AllDay": false}`;
+                            end = tabend.join('-');
+                            start = tabstart.join('-');
+                            let endDate = end.concat(' ').concat(end2);
+                            let startDate = start.concat(' ').concat(start2);
+                            console.log(startDate);
+                            console.log(endDate);
+                            jsonData = `{"Subject": "${items[i].summary}", "StartTime": "${startDate}", "EndTime": "${endDate}", "className": "chill", "AllDay": false}`;
                         }
                         let jsonObj = JSON.parse(jsonData);
+                        console.log(items[i]);
+                        console.log(jsonData);
                         my_googletab[i] = jsonObj;
                     }
                     const stop_2 = Date.now()
