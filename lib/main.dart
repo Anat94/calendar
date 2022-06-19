@@ -4,8 +4,58 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
+const EPILINK =
+    "https://intra.epitech.eu/auth-946e2bf8910dc415d92d10145bdf4f3b33dcabe2";
+
 void main() {
   runApp(new JsonData());
+}
+
+Future<Album> fetchAlbum() async {
+  final response = await http.get(Uri.parse('$EPILINK/user?format=json'));
+
+  if (response.statusCode == 200) {
+    print("JE RENTRE");
+    return Album.fromJson(jsonDecode(response.body));
+  } else {
+    print("JE PETE");
+    throw Exception('Failed to load album');
+  }
+}
+
+class Album {
+  final String gpa;
+  final String email;
+  final String title;
+  final String image;
+  final String city;
+  final String scolaryear;
+  final int promo;
+  final int credits;
+
+  Album({
+    required this.gpa,
+    required this.email,
+    required this.title,
+    required this.image,
+    required this.city,
+    required this.scolaryear,
+    required this.promo,
+    required this.credits,
+  });
+
+  factory Album.fromJson(Map<String, dynamic> json) {
+    return Album(
+      gpa: json['gpa'][0]['gpa'],
+      email: json['internal_email'],
+      title: json['title'],
+      image: json['picture'],
+      city: json['groups'][0]['name'],
+      scolaryear: json['scolaryear'],
+      promo: json['promo'] as int,
+      credits: json['credits'] as int,
+    );
+  }
 }
 
 class JsonData extends StatelessWidget {
@@ -26,8 +76,8 @@ class OnlineJsonData extends StatefulWidget {
 }
 
 Future<List<Meeting>> getDataFromWeb() async {
-  var data = null;
-  data = await http.get(Uri.parse("https://calendar-node-js.herokuapp.com/"));
+  var data =
+      await http.get(Uri.parse("https://calendar-node-js.herokuapp.com/"));
   print("Http req => ok");
   var jsonData = json.decode(data.body);
 
@@ -53,8 +103,8 @@ Future<List<Meeting>> getDataFromWeb() async {
 }
 
 Future<List<Meeting>> getDataFromWeb2() async {
-  var data = null;
-  data = await http.get(Uri.parse("https://calendar-node-js.herokuapp.com/"));
+  var data =
+      await http.get(Uri.parse("https://calendar-node-js.herokuapp.com/"));
   print("Http req => ok");
   var jsonData = json.decode(data.body);
 
@@ -111,10 +161,9 @@ DateTime _convertDateFromString(String date) {
 }
 
 CalendarController _calendarController1 = CalendarController();
-CalendarController _calendarController2 = CalendarController();
-CalendarController _calendarController3 = CalendarController();
 
 class CalendarExample extends State<OnlineJsonData> {
+  late Future<Album> futureAlbum;
   int _selectedIndex = 0;
   List<Widget> _widgetOptions = <Widget>[
     Container(
@@ -202,157 +251,183 @@ class CalendarExample extends State<OnlineJsonData> {
   @override
   void initState() {
     super.initState();
+    futureAlbum = fetchAlbum();
   }
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      // ! swipe to reload
       appBar: new AppBar(
         title: Text('Calendrier'),
         actions: <Widget>[
           IconButton(
-            icon: const Icon(Icons.account_circle_sharp),
-            tooltip: 'Voir mes infos',
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute<void>(builder: (BuildContext context) {
-                return Scaffold(
-                    appBar: AppBar(
-                      title: const Text('Informations :'),
-                    ),
-                    body: SafeArea(
-                      child: Column(
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: NetworkImage("xxIMAGExx"),
-                                    fit: BoxFit.cover)),
-                            child: Container(
-                              width: double.infinity,
-                              height: 200,
-                              child: Container(
-                                alignment: Alignment(0.0, 2.5),
-                                child: CircleAvatar(
-                                  backgroundImage: NetworkImage("xxIMAGExx"),
-                                  radius: 60.0,
-                                ),
+              icon: const Icon(Icons.account_circle_sharp),
+              tooltip: 'Voir mes infos',
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute<void>(
+                  builder: (BuildContext context) {
+                    return Scaffold(
+                        appBar: AppBar(
+                          title: const Text('Informations :'),
+                        ),
+                        body: SafeArea(
+                          child: Column(
+                            children: [
+                              FutureBuilder<Album>(
+                                future: fetchAlbum(),
+                                builder: (context, snapshot) {
+                                  if (snapshot.hasData) {
+                                    return Column(children: [
+                                      Container(
+                                        width: double.infinity,
+                                        height: 150,
+                                        child: Container(
+                                          alignment: Alignment(0.0, 2.5),
+                                          child: CircleAvatar(
+                                            backgroundImage: NetworkImage(
+                                                "$EPILINK${snapshot.data!.image}"),
+                                            radius: 60.0,
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 60,
+                                      ),
+                                      Text(
+                                        '${snapshot.data!.title}',
+                                        style: TextStyle(
+                                            fontSize: 25.0,
+                                            color: Colors.blueGrey,
+                                            letterSpacing: 2.0,
+                                            fontWeight: FontWeight.w400),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      Text(
+                                        "${snapshot.data!.email}",
+                                        style: TextStyle(
+                                            fontSize: 15.0,
+                                            color: Colors.black45,
+                                            letterSpacing: 2.0,
+                                            fontWeight: FontWeight.w300),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      Card(
+                                          margin: EdgeInsets.symmetric(
+                                              horizontal: 20.0, vertical: 8.0),
+                                          elevation: 2.0,
+                                          child: Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                  vertical: 12, horizontal: 30),
+                                              child: Text(
+                                                "${snapshot.data!.city}"
+                                                        .toUpperCase() +
+                                                    " (${snapshot.data!.scolaryear} - ${snapshot.data!.promo})",
+                                                // - (2021 - 2026)",
+                                                style: TextStyle(
+                                                    letterSpacing: 2.0,
+                                                    fontWeight:
+                                                        FontWeight.w300),
+                                              ))),
+                                      SizedBox(
+                                        height: 15,
+                                      ),
+                                      Card(
+                                        margin: EdgeInsets.symmetric(
+                                            horizontal: 20.0, vertical: 8.0),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              Expanded(
+                                                child: Column(
+                                                  children: [
+                                                    Text(
+                                                      "GPA :",
+                                                      style: TextStyle(
+                                                          color:
+                                                              Colors.blueAccent,
+                                                          fontSize: 22.0,
+                                                          fontWeight:
+                                                              FontWeight.w600),
+                                                    ),
+                                                    SizedBox(
+                                                      height: 7,
+                                                    ),
+                                                    Text(
+                                                      '${snapshot.data!.gpa}',
+                                                      style: TextStyle(
+                                                          color: Colors.black,
+                                                          fontSize: 22.0,
+                                                          fontWeight:
+                                                              FontWeight.w300),
+                                                    )
+                                                  ],
+                                                ),
+                                              ),
+                                              Expanded(
+                                                child: Column(
+                                                  children: [
+                                                    Text(
+                                                      "Crédits",
+                                                      style: TextStyle(
+                                                          color:
+                                                              Colors.blueAccent,
+                                                          fontSize: 22.0,
+                                                          fontWeight:
+                                                              FontWeight.w600),
+                                                    ),
+                                                    SizedBox(
+                                                      height: 7,
+                                                    ),
+                                                    Text(
+                                                      '${snapshot.data!.credits}',
+                                                      style: TextStyle(
+                                                          color: Colors.black,
+                                                          fontSize: 22.0,
+                                                          fontWeight:
+                                                              FontWeight.w300),
+                                                    )
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 50,
+                                      ),
+                                    ]);
+                                  } else {
+                                    return SizedBox(
+                                      height:
+                                          (MediaQuery.of(context).size.width) /
+                                              2,
+                                      width:
+                                          (MediaQuery.of(context).size.height) /
+                                              2,
+                                      child: Center(
+                                        child: CircularProgressIndicator(),
+                                      ),
+                                    );
+                                  }
+                                },
                               ),
-                            ),
+                            ],
                           ),
-                          SizedBox(
-                            height: 60,
-                          ),
-                          Text(
-                            "xxNAMExx",
-                            style: TextStyle(
-                                fontSize: 25.0,
-                                color: Colors.blueGrey,
-                                letterSpacing: 2.0,
-                                fontWeight: FontWeight.w400),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            "xxEMAILxx",
-                            style: TextStyle(
-                                fontSize: 15.0,
-                                color: Colors.black45,
-                                letterSpacing: 2.0,
-                                fontWeight: FontWeight.w300),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Card(
-                              margin: EdgeInsets.symmetric(
-                                  horizontal: 20.0, vertical: 8.0),
-                              elevation: 2.0,
-                              child: Padding(
-                                  padding: EdgeInsets.symmetric(
-                                      vertical: 12, horizontal: 30),
-                                  child: Text(
-                                    "VILLE - (2021 - 2026)",
-                                    style: TextStyle(
-                                        letterSpacing: 2.0,
-                                        fontWeight: FontWeight.w300),
-                                  ))),
-                          SizedBox(
-                            height: 15,
-                          ),
-                          Card(
-                            margin: EdgeInsets.symmetric(
-                                horizontal: 20.0, vertical: 8.0),
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Expanded(
-                                    child: Column(
-                                      children: [
-                                        Text(
-                                          "GPA :",
-                                          style: TextStyle(
-                                              color: Colors.blueAccent,
-                                              fontSize: 22.0,
-                                              fontWeight: FontWeight.w600),
-                                        ),
-                                        SizedBox(
-                                          height: 7,
-                                        ),
-                                        Text(
-                                          "xxGPAxx",
-                                          style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 22.0,
-                                              fontWeight: FontWeight.w300),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Column(
-                                      children: [
-                                        Text(
-                                          "Crédits",
-                                          style: TextStyle(
-                                              color: Colors.blueAccent,
-                                              fontSize: 22.0,
-                                              fontWeight: FontWeight.w600),
-                                        ),
-                                        SizedBox(
-                                          height: 7,
-                                        ),
-                                        Text(
-                                          "xxCréditsxx",
-                                          style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 22.0,
-                                              fontWeight: FontWeight.w300),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 50,
-                          ),
-                        ],
-                      ),
-                    ));
-              }));
-            },
-          ),
+                        ));
+                  },
+                ));
+              }),
         ],
       ),
       body: Center(

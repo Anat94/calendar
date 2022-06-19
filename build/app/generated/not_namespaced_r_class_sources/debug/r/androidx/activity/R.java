@@ -28,8 +28,8 @@ public final class R {
     public static final class color {
         private color() {}
 
-        public static final int notification_action_color_filter = 0x7f020002;
-        public static final int notification_icon_bg_color = 0x7f020003;
+        public static final int notification_action_color_filter = 0x7f020003;
+        public static final int notification_icon_bg_color = 0x7f020004;
     }
     public static final class dimen {
         private dimen() {}

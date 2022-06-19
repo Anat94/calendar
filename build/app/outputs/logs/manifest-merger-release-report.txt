@@ -45,7 +45,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/anato
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.6.0] /home/anatole/.gradle/caches/transforms-2/files-2.1/f90299ff420036e311b84c728802cd71/core-1.6.0/AndroidManifest.xml:24:18-86
 	android:label
-		ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:10:9-48
+		ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:10:9-36
 	android:icon
 		ADDED from /home/anatole/delivery/NodeJs/Calendar/android/app/src/main/AndroidManifest.xml:11:9-43
 	android:name

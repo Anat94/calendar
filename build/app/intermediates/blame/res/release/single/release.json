@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/res/merged/release/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "/home/anatole/delivery/NodeJs/Calendar/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
-    },
-    {
         "merged": "/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/res/merged/release/drawable-hdpi-v4_notify_panel_notification_icon_bg.png.flat",
         "source": "/home/anatole/.gradle/caches/transforms-2/files-2.1/f90299ff420036e311b84c728802cd71/core-1.6.0/res/drawable-hdpi-v4/notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/res/merged/release/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "/home/anatole/delivery/NodeJs/Calendar/android/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png"
     },
     {
         "merged": "/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/res/merged/release/drawable_launch_background.xml.flat",
@@ -40,12 +40,20 @@
         "source": "/home/anatole/.gradle/caches/transforms-2/files-2.1/f90299ff420036e311b84c728802cd71/core-1.6.0/res/layout/notification_template_icon_group.xml"
     },
     {
+        "merged": "/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/res/merged/release/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "/home/anatole/delivery/NodeJs/Calendar/android/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
         "merged": "/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/res/merged/release/drawable_notification_tile_bg.xml.flat",
         "source": "/home/anatole/.gradle/caches/transforms-2/files-2.1/f90299ff420036e311b84c728802cd71/core-1.6.0/res/drawable/notification_tile_bg.xml"
     },
     {
         "merged": "/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/res/merged/release/drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
         "source": "/home/anatole/.gradle/caches/transforms-2/files-2.1/f90299ff420036e311b84c728802cd71/core-1.6.0/res/drawable-mdpi-v4/notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/res/merged/release/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/home/anatole/delivery/NodeJs/Calendar/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
     },
     {
         "merged": "/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/res/merged/release/layout-v21_notification_action.xml.flat",
@@ -64,16 +72,28 @@
         "source": "/home/anatole/.gradle/caches/transforms-2/files-2.1/f90299ff420036e311b84c728802cd71/core-1.6.0/res/drawable-mdpi-v4/notification_bg_low_pressed.9.png"
     },
     {
-        "merged": "/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/res/merged/release/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "/home/anatole/delivery/NodeJs/Calendar/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+        "merged": "/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/res/merged/release/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/home/anatole/delivery/NodeJs/Calendar/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
     },
     {
         "merged": "/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/res/merged/release/layout-v16_notification_template_custom_big.xml.flat",
         "source": "/home/anatole/.gradle/caches/transforms-2/files-2.1/f90299ff420036e311b84c728802cd71/core-1.6.0/res/layout-v16/notification_template_custom_big.xml"
     },
     {
+        "merged": "/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/res/merged/release/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "/home/anatole/delivery/NodeJs/Calendar/android/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
         "merged": "/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/res/merged/release/drawable-mdpi-v4_notification_bg_normal_pressed.9.png.flat",
         "source": "/home/anatole/.gradle/caches/transforms-2/files-2.1/f90299ff420036e311b84c728802cd71/core-1.6.0/res/drawable-mdpi-v4/notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/res/merged/release/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/home/anatole/delivery/NodeJs/Calendar/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/res/merged/release/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/home/anatole/delivery/NodeJs/Calendar/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
         "merged": "/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/res/merged/release/layout-v21_notification_action_tombstone.xml.flat",
@@ -84,16 +104,20 @@
         "source": "/home/anatole/.gradle/caches/transforms-2/files-2.1/f90299ff420036e311b84c728802cd71/core-1.6.0/res/drawable-xhdpi-v4/notification_bg_low_normal.9.png"
     },
     {
+        "merged": "/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/res/merged/release/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/home/anatole/delivery/NodeJs/Calendar/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
         "merged": "/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/res/merged/release/drawable-v21_notification_action_background.xml.flat",
         "source": "/home/anatole/.gradle/caches/transforms-2/files-2.1/f90299ff420036e311b84c728802cd71/core-1.6.0/res/drawable-v21/notification_action_background.xml"
     },
     {
-        "merged": "/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/res/merged/release/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "/home/anatole/delivery/NodeJs/Calendar/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+        "merged": "/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/res/merged/release/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/home/anatole/delivery/NodeJs/Calendar/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/res/merged/release/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "/home/anatole/delivery/NodeJs/Calendar/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/res/merged/release/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/home/anatole/delivery/NodeJs/Calendar/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
         "merged": "/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/res/merged/release/layout_notification_action.xml.flat",
@@ -132,6 +156,10 @@
         "source": "/home/anatole/.gradle/caches/transforms-2/files-2.1/f90299ff420036e311b84c728802cd71/core-1.6.0/res/layout/notification_template_part_chronometer.xml"
     },
     {
+        "merged": "/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/res/merged/release/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "/home/anatole/delivery/NodeJs/Calendar/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
         "merged": "/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/res/merged/release/drawable_notification_icon_background.xml.flat",
         "source": "/home/anatole/.gradle/caches/transforms-2/files-2.1/f90299ff420036e311b84c728802cd71/core-1.6.0/res/drawable/notification_icon_background.xml"
     },
@@ -140,8 +168,8 @@
         "source": "/home/anatole/.gradle/caches/transforms-2/files-2.1/f90299ff420036e311b84c728802cd71/core-1.6.0/res/drawable-hdpi-v4/notification_bg_low_normal.9.png"
     },
     {
-        "merged": "/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/res/merged/release/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "/home/anatole/delivery/NodeJs/Calendar/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/res/merged/release/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "/home/anatole/delivery/NodeJs/Calendar/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png"
     },
     {
         "merged": "/home/anatole/delivery/NodeJs/Calendar/build/app/intermediates/res/merged/release/drawable-hdpi-v4_notification_bg_normal.9.png.flat",

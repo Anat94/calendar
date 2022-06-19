@@ -1,0 +1,35 @@
+class _CacaState extends State<Caca> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        children: [
+          const SizedBox(height: 250, width: 50),
+          FutureBuilder<Album>(
+            future: fetchAlbum(),
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return Text('Name : '
+                    '${snapshot.data!.title}'
+                    '\nEmail : '
+                    '${snapshot.data!.login}'
+                    '\nGPA : '
+                    '${snapshot.data!.gpa}'
+                    '\nCrédits : '
+                    '${snapshot.data!.credits}');
+              } else if (snapshot.hasError) {
+                return Text('${snapshot.error}');
+              }
+              // By default, show a loading spinner.
+              return const CircularProgressIndicator();
+            },
+            //child: MyButton(),
+          ),
+          const SizedBox(height: 50, width: 50),
+          const ElevatedButton(child: Text("REFRESH"), onPressed: fetchAlbum),
+        ],
+      ),
+      //],
+    );
+  }
+}

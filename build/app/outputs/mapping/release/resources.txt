@@ -617,12 +617,12 @@ Marking attr:android_endY:-1 used because its prefix matches string pool constan
 Marking attr:android_tileMode:-1 used because its prefix matches string pool constant android
 Marking attr:android_offset:-1 used because its prefix matches string pool constant android
 Resource Reference Graph:
-color:notification_action_color_filter:2130837506 => [color:androidx_core_secondary_text_default_material_light:2130837505]
+color:notification_action_color_filter:2130837507 => [color:androidx_core_secondary_text_default_material_light:2130837505]
 dimen:notification_media_narrow_margin:2130903054 => [dimen:notification_content_margin_start:2130903050]
 drawable:notification_action_background:2130968577 => [color:androidx_core_ripple_material_light:2130837504, dimen:compat_button_inset_vertical_material:2130903041, dimen:compat_button_inset_horizontal_material:2130903040, dimen:compat_control_corner_material:2130903044, dimen:compat_button_padding_vertical_material:2130903043, dimen:compat_button_padding_horizontal_material:2130903042]
 drawable:notification_bg:2130968578 => [drawable:notification_bg_normal_pressed:2130968583, drawable:notification_bg_normal:2130968582]
 drawable:notification_bg_low:2130968579 => [drawable:notification_bg_low_pressed:2130968581, drawable:notification_bg_low_normal:2130968580]
-drawable:notification_icon_background:2130968584 => [color:notification_icon_bg_color:2130837507]
+drawable:notification_icon_background:2130968584 => [color:notification_icon_bg_color:2130837508]
 drawable:notification_tile_bg:2130968587 => [drawable:notify_panel_notification_icon_bg:2130968588]
 layout:notification_action:2131165185 => [style:Widget_Compat_NotificationActionContainer:2131361798, dimen:notification_action_icon_size:2130903047, style:Widget_Compat_NotificationActionText:2131361799]
 layout:notification_action_tombstone:2131165186 => [style:Widget_Compat_NotificationActionContainer:2131361798, dimen:notification_action_icon_size:2130903047, style:Widget_Compat_NotificationActionText:2131361799]
@@ -630,6 +630,8 @@ layout:notification_template_custom_big:2131165187 => [dimen:notification_large_
 layout:notification_template_icon_group:2131165188 => [dimen:notification_large_icon_height:2130903051, dimen:notification_large_icon_width:2130903052, dimen:notification_big_circle_margin:2130903049, dimen:notification_right_icon_size:2130903055]
 layout:notification_template_part_chronometer:2131165189 => [style:TextAppearance_Compat_Notification_Time:2131361796]
 layout:notification_template_part_time:2131165190 => [style:TextAppearance_Compat_Notification_Time:2131361796]
+mipmap:ic_launcher:2131230720 => [color:ic_launcher_background:2130837506, mipmap:ic_launcher_foreground:2131230721]
+mipmap:ic_launcher_round:2131230722 => [color:ic_launcher_background:2130837506, mipmap:ic_launcher_foreground:2131230721]
 style:LaunchTheme:2131361792 => [drawable:launch_background:2130968576]
 style:TextAppearance_Compat_Notification_Info:2131361794 => [style:TextAppearance_Compat_Notification:2131361793, style:TextAppearance_Compat:-1, style:TextAppearance:-1]
 style:TextAppearance_Compat_Notification_Line2:2131361795 => [style:TextAppearance_Compat_Notification_Info:2131361794]
@@ -736,3 +738,9 @@ Skipped unused resource res/layout-v21/notification_action.xml: -1 bytes (replac
 Skipped unused resource res/layout-v21/notification_action_tombstone.xml: -1 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout-v21/notification_template_custom_big.xml: -1 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout-v21/notification_template_icon_group.xml: -1 bytes (replaced with small dummy file of size 104 bytes)
+Skipped unused resource res/mipmap-mdpi-v4/ic_launcher_round.png: 2691 bytes (replaced with small dummy file of size 67 bytes)
+Skipped unused resource res/mipmap-hdpi-v4/ic_launcher_round.png: 4153 bytes (replaced with small dummy file of size 67 bytes)
+Skipped unused resource res/mipmap-xhdpi-v4/ic_launcher_round.png: 5660 bytes (replaced with small dummy file of size 67 bytes)
+Skipped unused resource res/mipmap-xxhdpi-v4/ic_launcher_round.png: 8503 bytes (replaced with small dummy file of size 67 bytes)
+Skipped unused resource res/mipmap-xxxhdpi-v4/ic_launcher_round.png: 12229 bytes (replaced with small dummy file of size 67 bytes)
+Skipped unused resource res/mipmap-anydpi-v26/ic_launcher_round.xml: -1 bytes (replaced with small dummy file of size 104 bytes)
